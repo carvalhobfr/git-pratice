@@ -1,0 +1,290 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#10131a"><title>CIDADE SEM LEI · Solo 0.1</title><style>@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&display=swap');
+:root{font-family:'DM Sans',system-ui,-apple-system,Arial,sans-serif;color:#e8e7e4;background:#0d1016;--bg:#0d1016;--panel:#161a22;--panel2:#1c212b;--muted:#9298a5;--border:#2b303a;--text:#e8e7e4;--red:#dd5952;--green:#a9c78c;--gold:#ddb77c;--blue:#92a8d1;color-scheme:dark}
+*{box-sizing:border-box}body{margin:0;min-width:320px}button,input,select{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.42}button:focus-visible,input:focus-visible{outline:2px solid #efae76;outline-offset:3px}a{color:inherit;text-decoration:none}p{margin:0}h1,h2,h3{margin:0}h1,h2,h3,.brand,.big-number,.metric strong,.label-tag{font-family:'Barlow Condensed','Arial Narrow',sans-serif;letter-spacing:.015em}h1{font-size:clamp(36px,4.4vw,64px);line-height:.99}h2{font-size:26px}h3{font-size:22px}small,.small{font-size:12px}.muted{color:var(--muted)}.accent{color:var(--red)}.good{color:var(--green)}.bad{color:#e67b73}.gold{color:var(--gold)}.no-select{user-select:none}
+.app{min-height:100vh;display:grid;grid-template-columns:236px minmax(0,1fr)}.sidebar{background:#10141c;border-right:1px solid var(--border);height:100vh;position:sticky;top:0;padding:24px 14px 20px;display:flex;flex-direction:column;z-index:3}.brand{padding:8px 14px 28px;text-transform:uppercase;font-size:26px;line-height:24px;font-weight:800;letter-spacing:.03em}.brand span{color:var(--red)}.brand small{display:block;font-family:'DM Sans',sans-serif;font-weight:700;font-size:9px;letter-spacing:.3em;color:#838d9b;margin-top:8px}.nav-caption{font-weight:700;font-size:10px;letter-spacing:.15em;color:#717c8d;text-transform:uppercase;margin:0 14px 8px}.side-links{display:grid;gap:5px}.nav-button{width:100%;display:flex;align-items:center;gap:13px;border:1px solid transparent;color:#a4aab6;border-radius:7px;background:none;text-align:left;font-weight:700;font-size:13px;padding:12px 13px}.nav-button:hover{color:#fff;background:#1d222d}.nav-button.active{color:#fff;background:#232833;border-color:#373e4b}.nav-button.active .nav-icon{color:#f2766c}.nav-icon{font-size:18px;width:24px;text-align:center}.side-foot{margin-top:auto;padding:16px 14px;border-top:1px solid var(--border)}.side-foot p{font-size:12px;color:#818b99;line-height:1.7}.tiny-pill{font-size:10px;font-weight:800;color:var(--green);border:1px solid #50624d;background:#213027;padding:3px 7px;border-radius:4px;display:inline-flex;align-items:center;gap:5px}
+.main{min-width:0;max-width:1550px;width:100%;margin:auto;padding:0 32px 60px}.topbar{height:80px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:16px}.breadcrumb{font-size:12px;color:#78808e;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.top-controls{display:flex;align-items:center;gap:16px}.day-chip{background:#20252e;border:1px solid #333843;color:#e9ded2;padding:9px 12px;border-radius:5px;font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:700;letter-spacing:.02em;white-space:nowrap}.player-chip{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:800}.player-icon{border-radius:6px;width:34px;height:34px;display:grid;place-items:center;background:#57312e;color:#ffb9a2;border:1px solid #85433f;font-size:19px}
+.content{padding-top:28px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin-bottom:18px}.section-head p{color:var(--muted);font-size:13px;margin-top:6px;line-height:1.5}.page-label{font-size:10px;font-weight:800;letter-spacing:.19em;color:var(--red);text-transform:uppercase;margin-bottom:9px}.section-title{font-size:38px;font-weight:800;text-transform:uppercase;line-height:1}.eyebrow{font-size:10px;letter-spacing:.17em;font-weight:800;text-transform:uppercase;color:#9097a6}.panel{border:1px solid var(--border);background:var(--panel);border-radius:8px;overflow:hidden}.panel-pad{padding:20px}.panel-head{padding:17px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:15px}.panel-head h3{font-size:19px;text-transform:uppercase}.panel-caption{font-size:11px;color:var(--muted)}.mini-note{font-size:11px;letter-spacing:.02em;color:#a5a9b2}.grid{display:grid;gap:16px}.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}.gap-top{margin-top:18px}.hero{position:relative;background:radial-gradient(ellipse at 80% 35%,#54362e 0%,transparent 40%),linear-gradient(135deg,#24252a 5%,#171e29 57%,#121822 100%);border:1px solid #414046;border-radius:8px;min-height:240px;padding:34px 36px;overflow:hidden;display:flex;justify-content:space-between}.hero:after{content:'CITY / 001';position:absolute;right:-7px;bottom:-49px;font:800 158px 'Barlow Condensed',sans-serif;letter-spacing:-.055em;color:#ffffff09;transform:rotate(-6deg);pointer-events:none}.hero-copy{max-width:600px;position:relative;z-index:1}.hero p{font-size:13px;color:#aeb0b5;line-height:1.7;max-width:520px;margin:16px 0 24px}.hero-title-red{color:#e56960}.hero-right{align-self:flex-start;border-left:1px solid #6e615a;padding-left:22px;min-width:138px;position:relative;z-index:1}.hero-right strong{font:800 45px 'Barlow Condensed',sans-serif;display:block;margin:5px 0;color:#e9d9ca}.hero-right span{font-size:11px;color:#a4a4a8}.hero-art{position:absolute;left:50%;top:0;height:100%;width:50%;opacity:.36;background:linear-gradient(0deg,#10131a 1%,transparent 55%),repeating-linear-gradient(90deg,transparent 0 39px,#111823 39px 44px,transparent 44px 62px);clip-path:polygon(0 85%,15% 73%,15% 22%,25% 22%,25% 60%,38% 60%,38% 40%,53% 40%,53% 12%,67% 12%,67% 56%,79% 56%,79% 36%,93% 36%,93% 70%,100% 70%,100% 100%,0 100%)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid #353b47;border-radius:5px;background:#292f3a;color:#f2ede7;padding:10px 15px;font-weight:800;font-size:12px;min-height:38px;transition:background .14s,border-color .14s,transform .14s}.btn:not(:disabled):hover{background:#394250;border-color:#6a7180}.btn:not(:disabled):active{transform:translateY(1px)}.btn-primary{background:var(--red);border-color:#ee7068;color:#171314}.btn-primary:not(:disabled):hover{background:#ef776d;border-color:#ee8a7f}.btn-dark{background:#202630;border-color:#393f4b}.btn-small{min-height:31px;font-size:11px;padding:7px 11px}.btn-ghost{background:transparent}.btn-full{width:100%}.btn-green{background:#344335;border-color:#56694f;color:#d5efcb}.btn-green:not(:disabled):hover{background:#455d42}
+.metric{padding:17px 19px;background:var(--panel);border:1px solid var(--border);border-radius:7px}.metric-label{display:flex;align-items:center;justify-content:space-between;color:#9da4ae;font-size:11px;font-weight:700;gap:10px}.metric strong{font-size:34px;font-weight:800;line-height:1.35;display:block;margin-top:4px}.metric-sub{font-size:11px;color:#89919d;margin-top:2px}.bar{height:5px;background:#303540;border-radius:8px;overflow:hidden;margin-top:12px}.bar span{height:100%;display:block;background:var(--green);border-radius:8px;transition:width .4s}.bar-red span{background:var(--red)}.bar-blue span{background:var(--blue)}.bar-gold span{background:var(--gold)}.heading-inline{display:flex;align-items:center;gap:10px}.heading-inline .icon-square{width:34px;height:34px;display:grid;place-items:center;border-radius:6px;border:1px solid #49444a;background:#34292c;font-size:19px}
+.activity{padding:15px 20px;display:flex;gap:12px;border-bottom:1px solid #2a3039;align-items:start}.activity:last-child{border:0}.activity-symbol{width:33px;min-width:33px;height:33px;background:#262c36;border:1px solid #3e4653;border-radius:5px;display:grid;place-items:center;font-size:15px}.activity-symbol.good{color:var(--green);background:#273329;border-color:#3f5744}.activity-symbol.bad{color:#f28d87;background:#36272b;border-color:#67404b}.activity-title{font-size:12px;font-weight:800;color:#e8e6e3;margin-bottom:4px}.activity-info{font-size:11px;line-height:1.5;color:#8e98a6}.activity-day{margin-left:auto;color:#697585;font-size:11px;white-space:nowrap}.empty{text-align:center;color:#8793a1;padding:36px 20px;font-size:13px;line-height:1.7}.card{border:1px solid var(--border);background:var(--panel);border-radius:8px;padding:20px;display:flex;flex-direction:column;gap:11px}.card:hover{border-color:#434956}.card-top{display:flex;justify-content:space-between;align-items:start;gap:12px}.card-icon{height:42px;width:42px;background:#292a30;border:1px solid #44424a;border-radius:7px;display:grid;place-items:center;font-size:21px}.card h3{font-size:23px;text-transform:uppercase}.card p{font-size:12px;color:#959ca6;line-height:1.65;min-height:35px}.tags{display:flex;flex-wrap:wrap;gap:6px}.tag{font-size:10px;padding:4px 7px;border:1px solid #434752;background:#282e37;border-radius:4px;color:#afb5c0;font-weight:700}.tag-hot{color:#f0ad9c;border-color:#60423d;background:#332727}.card-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;padding:12px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}.card-stat span{display:block;color:#848d9c;font-size:10px;margin-bottom:5px}.card-stat strong{font-size:15px;font-weight:800;color:#f0eee9}.card-foot{display:flex;align-items:center;gap:10px;justify-content:space-between;margin-top:auto}.card-price{font:800 24px 'Barlow Condensed',sans-serif;color:var(--gold)}.card-price small{display:block;font:600 10px 'DM Sans',sans-serif;color:#929ca8;margin-bottom:2px}.tint{color:var(--red)}.city-panel{background:linear-gradient(120deg,#211e20,#151b22);border:1px solid #3e3a40}.market-line{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;border-bottom:1px solid var(--border)}.market-line:last-child{border:none}.market-goods{display:flex;gap:13px;align-items:center}.market-symbol{font-size:23px}.market-line strong{font-size:13px}.market-line p{font-size:11px;color:#9299a5;margin-top:4px}.market-right{display:flex;gap:12px;align-items:center}.market-value{font-size:16px;font-weight:800;color:var(--gold);text-align:right}.market-value small{display:block;font-size:10px;color:#8c97a5;font-weight:500}.notice{border:1px solid #64503d;background:#2b2724;padding:16px 18px;border-radius:6px;display:flex;align-items:start;gap:13px}.notice p{font-size:12px;line-height:1.6;color:#b8aca0;margin-top:5px}.notice strong{color:#e8c08e;font-size:13px}.notice-icon{font-size:25px}.notice.danger{border-color:#6d4040;background:#322427}.notice.danger strong{color:#f18b83}.side-by-side{display:grid;grid-template-columns:1.25fr .75fr;gap:16px}.stat-list{display:grid;gap:15px}.stat-line{display:flex;justify-content:space-between;align-items:center;gap:12px}.stat-line strong{font-size:13px}.stat-line span{font-size:12px;color:#aeb4bd}.stat-bar{height:6px;background:#2c333e;border-radius:8px;overflow:hidden;margin-top:7px}.stat-bar i{display:block;height:100%;background:#bd9c76;border-radius:8px}.rank-line{display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid var(--border)}.rank-line:last-child{border:none}.rank-line.self{background:#31282b}.rank-num{font:800 23px 'Barlow Condensed',sans-serif;color:#838b99;min-width:24px}.rank-line.self .rank-num{color:var(--red)}.rank-avatar{width:32px;height:32px;border:1px solid #575058;border-radius:5px;background:#2a2a32;display:grid;place-items:center;font-weight:800;font-size:13px}.rank-name{font-size:12px;font-weight:800;flex:1}.rank-name small{display:block;color:#838c9a;margin-top:4px;font-weight:600}.rank-score{font:800 22px 'Barlow Condensed',sans-serif;color:#e0d7cc}.control-row{display:flex;align-items:center;flex-wrap:wrap;gap:9px}.field{color:#dce0e5;background:#12161f;border:1px solid #3b414e;padding:10px 11px;min-height:39px;max-width:100%;border-radius:5px;font-size:13px}.toast{position:fixed;right:22px;bottom:24px;z-index:20;padding:13px 16px;border-radius:6px;background:#344232;border:1px solid #637d5c;color:#eaf5e5;box-shadow:0 9px 40px #0007;font-size:12px;font-weight:800;max-width:min(400px,90vw)}.toast.error{background:#512f32;border-color:#934e50;color:#ffe4e1}.footer{padding:22px 0;color:#697280;font-size:11px;display:flex;gap:14px;justify-content:space-between;flex-wrap:wrap}.footer button{border:0;background:none;color:#cda78e;font-size:11px;padding:0;font-weight:700}.footer button:hover{text-decoration:underline}
+.landing{min-height:100vh;display:grid;place-items:center;padding:32px 16px;background:radial-gradient(ellipse at 50% 25%,#42302e 0%,transparent 48%),#0d1016}.landing-card{max-width:800px;width:100%;background:#171b23;border:1px solid #47404a;box-shadow:0 25px 90px #0007;border-radius:10px;overflow:hidden}.landing-top{min-height:285px;background:linear-gradient(140deg,#3a2827 0%,#222630 45%,#151a22 100%);padding:42px 45px;position:relative;overflow:hidden}.landing-top:after{content:'CRIME';font:800 210px 'Barlow Condensed',sans-serif;color:#ffffff08;position:absolute;bottom:-95px;right:-14px;letter-spacing:-.08em;transform:rotate(-5deg)}.landing-top p{max-width:430px;color:#b6b5bc;font-size:13px;line-height:1.8;margin-top:15px}.landing-body{padding:30px 40px}.landing-choice{display:grid;grid-template-columns:1fr 1fr;gap:12px}.choice{padding:18px;background:#222832;border:1px solid #3b4350;border-radius:7px;text-align:left;color:#e6e7ea;min-height:104px}.choice.selected{background:#32272a;border-color:#db6860}.choice strong{font-size:15px;display:block;margin:4px 0 7px}.choice small{color:#949caa;font-size:11px;line-height:1.55;display:block}.landing-actions{display:flex;align-items:end;gap:12px;margin-top:20px}.landing-actions label{flex:1;font-size:11px;color:#a8afb9;display:grid;gap:7px}.landing-actions input{width:100%}.landing-actions .btn{min-height:40px}.landing-tail{margin-top:18px;font-size:11px;color:#737d8b;line-height:1.6}.landing-kicker{color:#f3a29c;font-size:10px;font-weight:800;letter-spacing:.2em}.danger-action{color:#e59a92!important}.mobile-nav{display:none}.bg-texture{background-image:linear-gradient(#ffffff03 1px,transparent 1px);background-size:100% 4px}
+@media (max-width:1150px){.main{padding:0 22px 36px}.grid-4{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{min-height:220px}.side-by-side{grid-template-columns:1fr 1fr}}
+@media (max-width:800px){.app{display:block}.sidebar{display:none}.main{padding:0 16px 90px}.topbar{height:64px}.content{padding-top:20px}.hero{padding:25px 20px;min-height:260px}.hero-right{display:none}.hero p{font-size:12px}.grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}.side-by-side{grid-template-columns:1fr}.mobile-nav{display:flex;position:fixed;bottom:0;left:0;right:0;background:#121720ee;backdrop-filter:blur(18px);border-top:1px solid #38404b;padding:7px 6px calc(7px + env(safe-area-inset-bottom));justify-content:space-around;z-index:10}.mobile-nav button{background:none;border:0;color:#9ba5b2;font-size:10px;font-weight:700;display:grid;justify-items:center;gap:4px;padding:4px 6px}.mobile-nav button span{font-size:19px}.mobile-nav button.active{color:#f2786c}.footer{margin-bottom:8px}.breadcrumb{display:none}}
+@media (max-width:540px){h1{font-size:43px}.section-title{font-size:33px}.grid-2,.grid-3{grid-template-columns:1fr}.grid-4{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.metric{padding:12px}.metric strong{font-size:27px}.metric-label{font-size:10px}.top-controls{gap:9px}.player-chip{font-size:11px}.player-icon{height:30px;width:30px}.day-chip{font-size:15px;padding:8px}.hero{min-height:242px}.panel-pad{padding:16px}.card{padding:16px}.section-head{align-items:start;flex-direction:column}.market-line{padding:14px 11px}.market-right{gap:7px}.market-value{font-size:13px}.market-line .btn{padding:8px}.landing-top{padding:31px 25px}.landing-body{padding:22px 20px}.landing-choice{grid-template-columns:1fr}.landing-actions{flex-direction:column;align-items:stretch}.landing-actions .btn{width:100%}}
+</style></head><body><div id="root"></div><script type="module">
+const VERSION = 1;
+const SEASON_DAYS = 60;
+const WORLD_HOURS_PER_REAL_HOUR = 4;
+const SEASON_HOURS = SEASON_DAYS * 24;
+const GOODS = {
+  herb: { name: 'Erva', icon: '🍃', base: 75 },
+  pills: { name: 'Sintéticos', icon: '💊', base: 210 },
+  parts: { name: 'Peças', icon: '⚙️', base: 155 },
+};
+const CRIMES = [
+  { id:'pickpocket', name:'Bater carteira', tag:'Rua', difficulty:12, energy:9, hours:0.5, low:70, high:165, heat:4, stat:'agility', description:'Uma distração rápida no centro.' },
+  { id:'shop', name:'Assaltar lojinha', tag:'Rua', difficulty:21, energy:15, hours:1, low:160, high:360, heat:7, stat:'strength', description:'Um caixa distraído e uma rota de fuga.' },
+  { id:'warehouse', name:'Invadir depósito', tag:'Planejamento', difficulty:31, energy:22, hours:2, low:330, high:650, heat:11, stat:'intelligence', description:'A fechadura é fácil; sair com a carga, nem tanto.' },
+  { id:'cars', name:'Roubar carros', tag:'Organizado', difficulty:43, energy:29, hours:3, low:680, high:1120, heat:15, stat:'agility', description:'Uma garagem vigiada, vários veículos valiosos.' },
+  { id:'armored', name:'Atacar carro-forte', tag:'Alto risco', difficulty:58, energy:36, hours:4, low:1600, high:2700, heat:22, stat:'strength', description:'Explosivo, cronômetro e muita coragem.' },
+  { id:'bank', name:'Assaltar banco', tag:'Alto risco', difficulty:75, energy:44, hours:6, low:3100, high:5100, heat:29, stat:'intelligence', description:'Uma operação para criminosos experientes.' },
+];
+const FACTORIES = [
+  { id:'greenhouse', name:'Estufa clandestina', good:'herb', price:2200, perHour:0.15, capacity:60, heat:1, description:'Produção constante, fácil de revender.' },
+  { id:'lab', name:'Laboratório', good:'pills', price:6900, perHour:0.085, capacity:36, heat:2, description:'Margem alta, operação mais arriscada.' },
+  { id:'chopshop', name:'Oficina de desmanche', good:'parts', price:11500, perHour:0.11, capacity:45, heat:3, description:'Transforma veículos em peças valiosas.' },
+];
+const ATTRS = [
+  {id:'strength',label:'Força',icon:'💪',description:'Ameaça e combate'},
+  {id:'intelligence',label:'Inteligência',icon:'🧠',description:'Planejamento e estratégia'},
+  {id:'agility',label:'Agilidade',icon:'⚡',description:'Fuga e ação furtiva'},
+  {id:'charisma',label:'Carisma',icon:'🎭',description:'Negociação e influência'},
+];
+const clamp=(v,min,max)=>Math.max(min,Math.min(max,v));
+const round=v=>Math.round(v);
+const roll=()=>Math.random();
+const formatMoney=v=>'$'+Math.floor(v).toLocaleString('pt-BR');
+const currentDay=s=>Math.floor(s.hours/24)+1;
+const currentHour=s=>String(Math.floor(s.hours%24)).padStart(2,'0')+':'+String(Math.round((s.hours%1)*60)%60).padStart(2,'0');
+const finished=s=>s.mode==='season' && s.hours>=SEASON_HOURS;
+const availableEnergy=s=>Math.max(0,Math.floor(s.energy));
+const statsPower=s=>s.stats.strength+s.stats.intelligence+s.stats.agility+s.stats.charisma;
+const assetsValue=s=>s.factories.reduce((sum,f)=>sum+(FACTORIES.find(x=>x.id===f.id)?.price||0)*f.count,0);
+const inventoryValue=s=>Object.keys(GOODS).reduce((sum,id)=>sum+(s.inventory[id]||0)*GOODS[id].base,0);
+const respect=s=>Math.max(0,Math.floor(statsPower(s)*11 + (s.cash+s.bank+assetsValue(s)+inventoryValue(s))*0.15+s.crimesWon*24));
+const crimeChance=(s,c)=>clamp(round(53+(s.stats[c.stat]*1.15+s.stats.intelligence*.38+s.stats.agility*.22-c.difficulty)*1.65-s.heat*.14),8,95);
+const factoryOutput=(s,f)=>Math.min(f.count*f.capacity,Math.floor(f.stock));
+const canAct=s=>!finished(s)&&s.jailUntil<=s.hours&&s.health>0;
+const EVENT_LIST=[
+  {id:'quiet',title:'Uma cidade em silêncio',body:'Nenhum evento especial afeta o mercado hoje.',good:null,mult:1},
+  {id:'port',title:'Navio estrangeiro no porto',body:'Os compradores das docas pagam mais pelas peças.',good:'parts',mult:1.4},
+  {id:'party',title:'Raves lotadas',body:'A procura por sintéticos subiu por toda a cidade.',good:'pills',mult:1.35},
+  {id:'harvest',title:'Grande apreensão',body:'Uma operação policial reduziu a oferta de erva.',good:'herb',mult:1.5},
+  {id:'surplus',title:'Excesso de mercadoria',body:'O preço dos sintéticos caiu após uma nova rota de abastecimento.',good:'pills',mult:.7},
+  {id:'checkpoints',title:'Polícia nas ruas',body:'Agentes reforçaram as rondas. Evite chamar atenção.',good:null,mult:1},
+];
+const marketEvent=s=>EVENT_LIST[(Math.floor((currentDay(s)-1)/3))%EVENT_LIST.length];
+const marketPrice=(s,good)=>Math.round(GOODS[good].base*(marketEvent(s).good===good?marketEvent(s).mult:1)*(1+Math.sin(currentDay(s)*.72+good.length)*.09));
+const rivals=s=>[
+  {name:'Viper',initial:1600,rate:335,accent:'#d98951'},
+  {name:'Fantasma',initial:1200,rate:290,accent:'#96a8d6'},
+  {name:'Mamba',initial:900,rate:380,accent:'#b6d47e'}
+].map((x,i)=>({name:x.name,respect:Math.floor(x.initial+x.rate*Math.max(0,s.hours/24)+Math.sin(s.hours/36+i)*350),accent:x.accent}));
+const leaderboard=s=>[...rivals(s),{name:s.name,respect:respect(s),isPlayer:true,accent:'#dc5c57'}].sort((a,b)=>b.respect-a.respect);
+function newGame({name='Sem Nome',mode='season'}={}){
+  const now=Date.now();
+  return {version:VERSION,name:name.trim().slice(0,22)||'Sem Nome',mode,startedAt:now,lastSavedAt:now,hours:8,energy:100,health:100,heat:4,cash:2600,bank:0,stats:{strength:12,intelligence:12,agility:12,charisma:12},inventory:{herb:0,pills:0,parts:0},factories:[],crimesWon:0,crimesFailed:0,jailUntil:0,records:[],lastEventDay:1};
+}
+function log(s,title,description,tone='neutral'){
+  s.records=[{id:`${Date.now()}-${Math.floor(roll()*1e7)}`,day:currentDay(s),title,description,tone},...s.records].slice(0,55);
+}
+function advance(s,additionalHours){
+  if(!(additionalHours>0)) return s;
+  const next=structuredClone(s);
+  const passage=next.mode==='season'?Math.max(0,Math.min(additionalHours,SEASON_HOURS-next.hours)):additionalHours;
+  if(!passage)return next;
+  next.hours+=passage;
+  next.energy=clamp(next.energy+passage*1.8,0,100);
+  next.heat=clamp(next.heat-passage*.22,0,100);
+  next.health=clamp(next.health+passage*.3,1,100);
+  for(const factory of next.factories){
+    const spec=FACTORIES.find(f=>f.id===factory.id);
+    if(spec)factory.stock=Math.min(factory.count*spec.capacity,factory.stock+passage*spec.perHour*factory.count);
+  }
+  if(finished(next)&&!finished(s))log(next,'Fim da temporada',`Você encerrou a rodada com ${respect(next).toLocaleString('pt-BR')} de respeito.`,'good');
+  return next;
+}
+function offlineProgress(s,now=Date.now()){
+  const previous=Number(s.lastSavedAt)||now;
+  const elapsed=Math.max(0,(now-previous)/3600000);
+  const next=advance(s,Math.min(elapsed*WORLD_HOURS_PER_REAL_HOUR,24*90));
+  const total=next.factories.reduce((x,f)=>x+Math.floor(f.stock),0);
+  if(elapsed>=.02&&next.hours>s.hours&&next.factories.length)log(next,'Enquanto você estava fora',`Suas operações continuaram trabalhando. Estoque atual: ${total} unidades.`,'neutral');
+  next.lastSavedAt=now;
+  return next;
+}
+function failReason(s,energy=0){
+  if(finished(s))return 'A temporada terminou. Continue no infinito ou comece uma nova.';
+  if(s.jailUntil>s.hours)return 'Você está preso. Avance o tempo para sair.';
+  if(s.health<=0)return 'Você precisa de atendimento médico.';
+  if(s.energy<energy)return `Estamina insuficiente (${energy} necessários).`;
+  return null;
+}
+function perform(s,action){
+  const next=structuredClone(s);
+  const error=(message)=>({state:s,error:message});
+  const ok=(value)=>({state:value,error:null});
+  const energyCost=action.type==='crime'?CRIMES.find(c=>c.id===action.id)?.energy:action.type==='train'?14:0;
+  if(action.type==='crime'||action.type==='train'||action.type==='buy'||action.type==='sell'){
+    const bad=failReason(next,energyCost);
+    if(bad)return error(bad);
+  }
+  if(action.type==='crime'){
+    const crime=CRIMES.find(c=>c.id===action.id);
+    if(!crime)return error('Roubo não encontrado.');
+    const chance=crimeChance(next,crime);
+    next.energy-=crime.energy;
+    const success=roll()*100<chance;
+    if(success){
+      const earned=round(crime.low+roll()*(crime.high-crime.low));
+      next.cash+=earned;next.crimesWon++;
+      next.stats[crime.stat]+=roll()<.45?2:1;
+      next.heat=clamp(next.heat+crime.heat,0,100);
+      log(next,'Golpe bem-sucedido',`${crime.name}: +${formatMoney(earned)}. Chance: ${chance}%.`,'good');
+    }else{
+      next.crimesFailed++;
+      next.heat=clamp(next.heat+crime.heat*1.55,0,100);
+      const damage=Math.floor(5+roll()*16);
+      next.health=Math.max(1,next.health-damage);
+      const arrested=roll()<(0.14+next.heat/200);
+      if(arrested){next.jailUntil=next.hours+8;next.cash=Math.max(0,next.cash-100);}
+      log(next,arrested?'Preso pela polícia':'O roubo falhou',`${crime.name}: -${damage} de saúde${arrested?', detido por 8 horas':''}. Chance: ${chance}%.`,'bad');
+    }
+    return ok(advance(next,crime.hours));
+  }
+  if(action.type==='train'){
+    if(!ATTRS.some(x=>x.id===action.id))return error('Atributo inválido.');
+    const cost=trainingCost(next,action.id);
+    if(next.cash<cost)return error('Dinheiro insuficiente para treinar.');
+    next.cash-=cost;next.energy-=14;next.stats[action.id]+=3;
+    log(next,'Treinamento concluído',`+3 em ${ATTRS.find(x=>x.id===action.id).label}. Custo: ${formatMoney(cost)}.`,'good');
+    return ok(advance(next,2));
+  }
+  if(action.type==='buy'){
+    const spec=FACTORIES.find(x=>x.id===action.id);if(!spec)return error('Negócio desconhecido.');
+    if(next.cash<spec.price)return error('Dinheiro insuficiente para comprar.');
+    next.cash-=spec.price;
+    const existing=next.factories.find(x=>x.id===spec.id);
+    if(existing)existing.count++;else next.factories.push({id:spec.id,count:1,stock:0});
+    next.heat=clamp(next.heat+spec.heat,0,100);
+    log(next,'Novo negócio adquirido',`Você comprou ${spec.name} por ${formatMoney(spec.price)}.`,'good');
+    return ok(advance(next,1));
+  }
+  if(action.type==='sell'){
+    const good=action.id;
+    if(!GOODS[good])return error('Produto inválido.');
+    const total=next.factories.filter(f=>FACTORIES.find(x=>x.id===f.id)?.good===good).reduce((v,f)=>v+Math.floor(f.stock),0);
+    if(!total)return error('Sem mercadorias para vender.');
+    const price=marketPrice(next,good);
+    let sold=0;
+    for(const f of next.factories){if(FACTORIES.find(x=>x.id===f.id)?.good===good){const qty=Math.floor(f.stock);f.stock-=qty;sold+=qty;}}
+    next.cash+=sold*price;
+    next.heat=clamp(next.heat+Math.ceil(sold/24),0,100);
+    log(next,'Venda nas docas',`${sold}x ${GOODS[good].name}: +${formatMoney(sold*price)}.`,'good');
+    return ok(advance(next,.5));
+  }
+  if(action.type==='rest'){
+    if(finished(next))return error('A temporada terminou.');
+    const hours=clamp(Number(action.hours)||8,1,24);
+    let updated=advance(next,hours);
+    updated.energy=clamp(updated.energy+hours*7,0,100);
+    updated.health=clamp(updated.health+hours*1.5,0,100);
+    updated.jailUntil=Math.max(updated.jailUntil,updated.hours);
+    log(updated,'Descanso',`Você descansou ${hours}h, recuperou energia e a cidade continuou em movimento.`);
+    return ok(updated);
+  }
+  if(action.type==='hospital'){
+    const cost=400;
+    if(next.cash<cost)return error('Você precisa de $400 para receber atendimento.');
+    if(finished(next))return error('A temporada terminou.');
+    next.cash-=cost;next.health=100;next.jailUntil=Math.max(next.jailUntil,next.hours);
+    log(next,'Alta hospitalar','Saúde recuperada ao máximo por $400.','good');
+    return ok(advance(next,3));
+  }
+  if(action.type==='deposit'||action.type==='withdraw'){
+    if(finished(next))return error('A temporada terminou.');
+    const amount=Math.floor(Number(action.amount));
+    if(!Number.isFinite(amount)||amount<=0)return error('Informe um valor válido.');
+    if(action.type==='deposit'){
+      if(next.cash<amount)return error('Você não tem esse dinheiro em mãos.');
+      next.cash-=amount;next.bank+=amount;
+    }else{
+      if(next.bank<amount)return error('Saldo bancário insuficiente.');
+      next.bank-=amount;next.cash+=amount;
+    }
+    log(next,action.type==='deposit'?'Depósito realizado':'Saque realizado',formatMoney(amount));
+    return ok(next);
+  }
+  if(action.type==='infinite'){
+    if(!finished(next))return error('Conclua a temporada antes de continuar no modo infinito.');
+    next.mode='infinite';
+    log(next,'Modo infinito desbloqueado','Sua cidade continua após o encerramento da temporada.','good');
+    return ok(next);
+  }
+  return error('Ação desconhecida.');
+}
+const trainingCost=(s,id)=>Math.round(130+s.stats[id]*22);
+function validateSave(raw){
+  if(!raw||raw.version!==VERSION||!['season','infinite'].includes(raw.mode))throw new Error('Save incompatível.');
+  if(!raw.stats||!ATTRS.every(x=>Number.isFinite(raw.stats[x.id])&&raw.stats[x.id]>=0))throw new Error('Atributos inválidos.');
+  if(!Array.isArray(raw.factories)||!raw.factories.every(f=>FACTORIES.some(x=>x.id===f.id)&&Number.isInteger(f.count)&&f.count>=1&&Number.isFinite(f.stock)&&f.stock>=0))throw new Error('Negócios inválidos.');
+  if(!Number.isFinite(raw.hours)||raw.hours<0||!Number.isFinite(raw.cash)||raw.cash<0||!Number.isFinite(raw.bank)||raw.bank<0)return false;
+  return true;
+}
+
+
+const KEY='cidade-sem-lei-save-v1';
+const root=document.getElementById('root');
+const esc=(v)=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let game=null,tab='dashboard',newMode='season',notificationTimer;
+try{const stored=JSON.parse(localStorage.getItem(KEY));if(stored&&validateSave(stored))game=offlineProgress(stored);}catch(e){console.warn('Save ignorado:',e)}
+const save=()=>{if(game){game.lastSavedAt=Date.now();try{localStorage.setItem(KEY,JSON.stringify(game))}catch(e){console.warn(e)}}};
+const icon=(e)=>`<span aria-hidden="true">${e}</span>`;
+const money=v=>formatMoney(v);
+const pct=v=>Math.max(0,Math.min(100,v));
+function toast(message,bad=false){let box=document.getElementById('toast');if(!box){box=document.createElement('div');box.id='toast';document.body.append(box)}box.className='toast'+(bad?' error':'');box.textContent=message;clearTimeout(notificationTimer);notificationTimer=setTimeout(()=>box.remove(),3800)}
+function apply(action){if(!game)return;const result=perform(game,action);if(result.error){toast(result.error,true);return;}game=result.state;save();render();const first=game.records[0];if(first&&['crime','buy','train','sell','rest','hospital','infinite'].includes(action.type))toast(first.title+(action.type==='crime'?' — '+first.description:''),first.tone==='bad')}
+const unit=(n)=>Math.floor(n).toLocaleString('pt-BR');
+const progress=(value,colour='')=>`<div class="bar ${colour}"><span style="width:${pct(value).toFixed(1)}%"></span></div>`;
+function metric(label,value,sub,emblem,bar,colour=''){
+  return `<div class="metric"><div class="metric-label"><span>${esc(label)}</span><span>${emblem}</span></div><strong>${value}</strong><div class="metric-sub">${sub}</div>${bar===undefined?'':progress(bar,colour)}</div>`
+}
+const NAV=[['dashboard','Painel','▦'],['crimes','Roubos','♠'],['training','Treinamento','◆'],['business','Negócios','▤'],['city','Cidade','⌂'],['ranking','Ranking','♛']];
+function landing(){root.innerHTML=`<div class="landing"><div class="landing-card"><div class="landing-top bg-texture"><div class="landing-kicker">ESTRATÉGIA CRIMINAL · DEMO 0.1</div><h1 style="margin-top:23px">CIDADE<br><span class="hero-title-red">SEM LEI.</span></h1><p>Comece como um criminoso de rua. Faça seus golpes, treine, compre negócios clandestinos e suba no ranking. A cidade não para quando você sai.</p></div><div class="landing-body"><div class="page-label">01 / Escolha seu caminho</div><div class="landing-choice"><button class="choice ${newMode==='season'?'selected':''}" data-mode="season"><strong>🏆 Temporada de ${SEASON_DAYS} dias</strong><small>Compita por respeito contra três rivais simulados. Ao final, continue no modo infinito se desejar.</small></button><button class="choice ${newMode==='infinite'?'selected':''}" data-mode="infinite"><strong>∞ Cidade infinita</strong><small>Sem prazo final. Evolua, compre negócios e jogue no seu ritmo.</small></button></div><form id="start-form" class="landing-actions"><label>SEU APELIDO<input class="field" id="name" maxlength="22" placeholder="Ex.: Corvo" value="Corvo" autocomplete="off" required /></label><button class="btn btn-primary" type="submit">COMEÇAR JORNADA →</button></form><p class="landing-tail">♧ 100% single-player · Salva automaticamente neste navegador · Sem login ou conexão com servidor · Modo online planejado para outra versão.</p></div></div></div>`}
+function shell(){
+const nav=NAV.map(([id,label,symbol])=>`<button class="nav-button ${tab===id?'active':''}" data-tab="${id}" ${tab===id?'aria-current="page"':''}><span class="nav-icon">${symbol}</span>${label}</button>`).join('');
+const mobile=NAV.filter(([id])=>id!=='training'&&id!=='ranking').map(([id,label,symbol])=>`<button class="${tab===id?'active':''}" data-tab="${id}" aria-label="${label}"><span>${symbol}</span>${label}</button>`).join('');
+root.innerHTML=`<div class="app"><aside class="sidebar"><div class="brand">CIDADE<span>SEM</span>LEI<small>CRIME NEVER SLEEPS</small></div><div class="nav-caption">NAVEGAÇÃO</div><nav class="side-links">${nav}</nav><div class="side-foot"><span class="tiny-pill">● SOLO OFFLINE</span><p style="margin-top:10px">Demo 0.1 · ${VERSION}<br>Salvamento automático<br>Inspirado nos jogos de navegador clássicos.</p></div></aside><main class="main"><header class="topbar"><div class="breadcrumb">CIDADE SEM LEI <span style="color:#e05a56">/</span> ${esc(NAV.find(x=>x[0]===tab)?.[1]||'')}</div><div class="top-controls"><span class="tiny-pill" style="white-space:nowrap">● SOLO</span><span class="day-chip">DIA ${currentDay(game)} · ${currentHour(game)}</span><div class="player-chip"><span class="player-icon">♠</span><span>${esc(game.name)}</span></div></div></header><div class="content">${content()}</div><footer class="footer"><span>© DEMO 0.1 · Campanha ${game.mode==='season'?'por temporada':'infinita'} · Dados guardados apenas no seu navegador</span><div class="control-row"><button data-export>Exportar save</button><button data-import>Importar save</button><button data-reset class="danger-action">Nova partida</button><input type="file" hidden id="importFile" accept="application/json,.json"></div></footer></main><nav class="mobile-nav">${mobile}</nav></div>`;
+}
+function header(title,desc,right=''){return `<div class="section-head"><div><div class="page-label">O SUBMUNDO TE ESPERA</div><h2 class="section-title">${title}</h2><p>${desc}</p></div>${right}</div>`}
+function seasonNotice(){
+ if(finished(game))return `<div class="notice" style="margin-bottom:18px"><div class="notice-icon">🏆</div><div style="flex:1"><strong>Temporada encerrada · Respeito final: ${unit(respect(game))}</strong><p>Você terminou na ${leaderboard(game).findIndex(r=>r.isPlayer)+1}ª posição. Continue nesta cidade sem limite de tempo, ou comece outra campanha.</p><div class="control-row" style="margin-top:12px"><button class="btn btn-primary btn-small" data-action="infinite">CONTINUAR NO INFINITO →</button><button class="btn btn-small" data-reset>NOVA TEMPORADA</button></div></div></div>`;
+ if(game.jailUntil>game.hours)return `<div class="notice danger" style="margin-bottom:18px"><div class="notice-icon">🚨</div><div><strong>Você está preso!</strong><p>Faltam ${Math.ceil(game.jailUntil-game.hours)} horas de jogo para a soltura. Descanse para avançar o tempo.</p></div></div>`;
+ return '';
+}
+function dashboard(){
+const event=marketEvent(game),rank=leaderboard(game).findIndex(x=>x.isPlayer)+1;
+return `${seasonNotice()}<section class="hero bg-texture"><div class="hero-art"></div><div class="hero-copy"><div class="page-label" style="color:#ffc6b5">SUA HISTÓRIA COMEÇA AQUI</div><h1>DOMINE<br><span class="hero-title-red">AS RUAS.</span></h1><p>Dinheiro compra influência. Risco constrói reputação. Cada decisão deixa sua marca na cidade.</p><div class="control-row"><button class="btn btn-primary" data-tab="crimes">♠ PLANEJAR UM ROUBO →</button><button class="btn btn-dark" data-tab="business">▤ MEUS NEGÓCIOS</button></div></div><div class="hero-right"><div class="eyebrow">SEU RESPEITO</div><strong>${unit(respect(game))}</strong><span>#${rank} NO RANKING</span><div style="margin-top:18px"><div class="eyebrow">PROGRESSO</div><strong style="font-size:29px">${game.mode==='season'?Math.min(100,Math.floor(game.hours/SEASON_HOURS*100))+'%':'∞'}</strong><span>${game.mode==='season'?`DIA ${Math.min(SEASON_DAYS,currentDay(game))} / ${SEASON_DAYS}`:'SEM LIMITE'}</span></div></div></section>
+<div class="grid grid-4 gap-top">${metric('DINHEIRO',money(game.cash),'Disponível em mãos','💵')}${metric('ESTAMINA',`${Math.floor(game.energy)}/100`,'Energia para agir','⚡',game.energy)}${metric('SAÚDE',`${Math.floor(game.health)}%`,'Condição física','♥',game.health,'bar-red')}${metric('PROCURADO',`${Math.floor(game.heat)}/100`,'Atenção policial','🚨',game.heat,'bar-gold')}</div>
+<div class="side-by-side gap-top"><div class="panel"><div class="panel-head"><h3>☷ ÚLTIMAS ATIVIDADES</h3><span class="panel-caption">O QUE ACONTECEU</span></div>${activities(5)}</div><div class="panel"><div class="panel-head"><h3>✦ CENTRAL DE OPERAÇÕES</h3><span class="panel-caption">PRÓXIMOS PASSOS</span></div><div class="panel-pad"><div class="notice"><div class="notice-icon">🗞️</div><div><strong>${esc(event.title)}</strong><p>${esc(event.body)}</p></div></div><div class="grid grid-2 gap-top"><button class="btn btn-dark btn-full" data-tab="training">◆ TREINAR ATRIBUTOS</button><button class="btn btn-dark btn-full" data-tab="city">⌂ DESCANSAR / BANCO</button></div><div style="margin-top:18px" class="eyebrow">ATRIBUTOS</div><div class="stat-list" style="margin-top:12px">${ATTRS.map(x=>`<div><div class="stat-line"><strong>${x.icon} ${x.label}</strong><span>${game.stats[x.id]}</span></div><div class="stat-bar"><i style="width:${Math.min(100,game.stats[x.id]/80*100)}%"></i></div></div>`).join('')}</div></div></div></div>`}
+function activities(limit=25){return (game.records.length?game.records.slice(0,limit).map(r=>`<div class="activity"><div class="activity-symbol ${r.tone}">${r.tone==='good'?'✓':r.tone==='bad'?'!':'✧'}</div><div><div class="activity-title">${esc(r.title)}</div><div class="activity-info">${esc(r.description)}</div></div><span class="activity-day">DIA ${r.day}</span></div>`).join(''):`<div class="empty">Ainda não há atividades.<br>Seu primeiro golpe vai aparecer aqui.</div>`)}
+function crimes(){return `${header('ROUBOS','Escolha um alvo, calcule o risco e dê seu próximo passo.')}${seasonNotice()}<div class="grid grid-3">${CRIMES.map((c,i)=>{
+ const chance=crimeChance(game,c),allowed=game.energy>=c.energy&&!finished(game)&&game.jailUntil<=game.hours;
+ return `<article class="card"><div class="card-top"><div class="card-icon">${['♠','🏪','📦','🚘','🚚','🏦'][i]}</div><span class="tag ${i>3?'tag-hot':''}">${esc(c.tag)}</span></div><h3>${esc(c.name)}</h3><p>${esc(c.description)}</p><div class="card-stats"><div class="card-stat"><span>CHANCE</span><strong style="color:${chance>=65?'var(--green)':chance>=40?'var(--gold)':'var(--red)'}">${chance}%</strong></div><div class="card-stat"><span>ESTAMINA</span><strong>${c.energy}</strong></div><div class="card-stat"><span>TEMPO</span><strong>${c.hours}h</strong></div></div><div class="card-foot"><div class="card-price"><small>RECOMPENSA POSSÍVEL</small>${money(c.low)} – ${money(c.high)}</div></div><button class="btn btn-primary btn-full" data-action="crime" data-id="${c.id}" ${allowed?'':'disabled'}>EXECUTAR ROUBO →</button></article>`}).join('')}</div><div class="notice gap-top"><span class="notice-icon">⚠️</span><div><strong>Risco real</strong><p>Uma falha pode ferir seu personagem, aumentar a atenção policial ou levar à prisão. Treine para melhorar as chances.</p></div></div>`}
+function training(){return `${header('TREINAMENTO','Melhore suas habilidades para alcançar crimes mais lucrativos.')}${seasonNotice()}<div class="grid grid-2">${ATTRS.map(a=>{const cost=trainingCost(game,a.id);return `<article class="card"><div class="card-top"><div class="card-icon">${a.icon}</div><span class="tag">+3 PONTOS</span></div><h3>${a.label}</h3><p>${a.description}. Cada sessão consome 14 de estamina e 2 horas do jogo.</p><div class="card-stats"><div class="card-stat"><span>ATUAL</span><strong>${game.stats[a.id]}</strong></div><div class="card-stat"><span>PRÓXIMO</span><strong>${game.stats[a.id]+3}</strong></div><div class="card-stat"><span>ESTAMINA</span><strong>14</strong></div></div><div class="card-foot"><span class="card-price">${money(cost)}</span><button class="btn btn-primary" data-action="train" data-id="${a.id}" ${game.cash>=cost&&game.energy>=14&&!finished(game)&&game.jailUntil<=game.hours?'':'disabled'}>TREINAR →</button></div></article>`}).join('')}</div>`}
+function business(){
+const event=marketEvent(game);
+return `${header('NEGÓCIOS','Invista em operações clandestinas e venda sua produção nas docas.')}${seasonNotice()}<div class="notice" style="margin-bottom:16px"><div class="notice-icon">⏳</div><div><strong>Produção offline ativada</strong><p>Suas fábricas produzem durante ações, descanso e enquanto você estiver fora. O estoque para ao atingir a capacidade máxima.</p></div></div><div class="grid grid-3">${FACTORIES.map(f=>{const owned=game.factories.find(x=>x.id===f.id),stock=owned?Math.floor(owned.stock):0,cap=owned?f.capacity*owned.count:0;return `<article class="card"><div class="card-top"><div class="card-icon">${GOODS[f.good].icon}</div><span class="tag">${owned?`${owned.count} UNIDADE(S)`:'NÃO ADQUIRIDO'}</span></div><h3>${esc(f.name)}</h3><p>${esc(f.description)}</p><div class="card-stats"><div class="card-stat"><span>PRODUÇÃO</span><strong>${(f.perHour).toFixed(3)}/h</strong></div><div class="card-stat"><span>ESTOQUE</span><strong>${stock} / ${cap||f.capacity}</strong></div><div class="card-stat"><span>PREÇO UN.</span><strong>${money(marketPrice(game,f.good))}</strong></div></div>${owned?progress(cap?stock/cap*100:0,'bar-gold'):''}<div class="card-foot"><span class="card-price"><small>COMPRAR NOVA UNIDADE</small>${money(f.price)}</span><button class="btn btn-primary" data-action="buy" data-id="${f.id}" ${game.cash>=f.price&&!finished(game)&&game.jailUntil<=game.hours?'':'disabled'}>COMPRAR +</button></div></article>`}).join('')}</div><div class="panel gap-top"><div class="panel-head"><h3>⚓ MERCADO DAS DOCAS</h3><span class="panel-caption">PREÇOS ATUAIS</span></div>${Object.keys(GOODS).map(id=>{const good=GOODS[id],qty=game.factories.filter(f=>FACTORIES.find(x=>x.id===f.id)?.good===id).reduce((x,f)=>x+Math.floor(f.stock),0);return `<div class="market-line"><div class="market-goods"><span class="market-symbol">${good.icon}</span><div><strong>${good.name}</strong><p>Estoque: ${qty} unidades</p></div></div><div class="market-right"><div class="market-value">${money(marketPrice(game,id))}<small>por unidade</small></div><button class="btn btn-green btn-small" data-action="sell" data-id="${id}" ${qty&&!finished(game)&&game.jailUntil<=game.hours?'':'disabled'}>VENDER TUDO</button></div></div>`}).join('')}</div><div class="notice gap-top"><div class="notice-icon">🗞️</div><div><strong>${esc(event.title)}</strong><p>${esc(event.body)}</p></div></div>`}
+function city(){
+return `${header('A CIDADE','Recupere suas forças, gerencie seu dinheiro e acompanhe os acontecimentos.')}${seasonNotice()}<div class="grid grid-2"><div class="panel"><div class="panel-head"><h3>🌙 DESCANSAR</h3><span class="panel-caption">O MUNDO CONTINUA</span></div><div class="panel-pad"><p class="muted" style="font-size:12px;line-height:1.7;margin-bottom:15px">Descansar recupera estamina e saúde, diminui sua exposição policial e faz os negócios produzirem. Mas os rivais também avançam no ranking.</p><div class="grid grid-3">${[4,8,16].map(h=>`<button class="btn btn-dark btn-full" data-action="rest" data-hours="${h}" ${finished(game)?'disabled':''}>${h} HORAS</button>`).join('')}</div><div class="eyebrow" style="margin-top:16px">A CIDADE NÃO DORME</div><p class="muted" style="font-size:11px;line-height:1.7;margin-top:5px">A cada hora real passam 4 horas do jogo. Fechar o navegador não pausa a temporada.</p></div></div><div class="panel"><div class="panel-head"><h3>✚ HOSPITAL</h3><span class="panel-caption">TRATAMENTO</span></div><div class="panel-pad"><div style="display:flex;justify-content:space-between;align-items:baseline"><span class="eyebrow">SUA SAÚDE</span><strong style="font:800 32px 'Barlow Condensed',sans-serif">${Math.floor(game.health)}%</strong></div>${progress(game.health,'bar-red')}<p class="muted" style="font-size:12px;line-height:1.6;margin:15px 0">Tratamento completo, recuperação imediata da saúde e 3 horas de repouso.</p><button class="btn btn-primary btn-full" data-action="hospital" ${game.cash>=400&&!finished(game)?'':'disabled'}>TRATAMENTO · $400 →</button></div></div></div><div class="grid grid-2 gap-top"><div class="panel"><div class="panel-head"><h3>▣ BANCO</h3><span class="panel-caption">GUARDE SEU DINHEIRO</span></div><div class="panel-pad"><div class="grid grid-2"><div><div class="eyebrow">EM MÃOS</div><h3 style="font-size:33px;margin-top:5px">${money(game.cash)}</h3></div><div><div class="eyebrow">NO BANCO</div><h3 style="font-size:33px;margin-top:5px">${money(game.bank)}</h3></div></div><div class="control-row gap-top"><input id="bankAmount" class="field" type="number" min="1" step="1" placeholder="Valor" style="width:130px;flex:1" /><button class="btn btn-dark" data-bank="deposit">DEPOSITAR</button><button class="btn btn-dark" data-bank="withdraw">SACAR</button></div><p class="muted" style="font-size:11px;margin-top:12px">Dinheiro depositado fica protegido de multas de prisão.</p></div></div><div class="panel"><div class="panel-head"><h3>🗞️ CRIMCITY TIMES</h3><span class="panel-caption">EDIÇÃO DO DIA ${currentDay(game)}</span></div><div class="panel-pad"><div class="page-label">NOTÍCIAS DE ÚLTIMA HORA</div><h3 style="font-size:27px;line-height:1.1">${esc(marketEvent(game).title)}</h3><p class="muted" style="font-size:12px;line-height:1.7;margin-top:10px">${esc(marketEvent(game).body)}</p><div class="tag" style="display:inline-block;margin-top:14px">NOVA EDIÇÃO A CADA 3 DIAS</div></div></div></div>`
+}
+function ranking(){const rank=leaderboard(game);return `${header('RANKING','Dispute o topo contra três rivais controlados pela simulação.')}${seasonNotice()}<div class="grid grid-2"><div class="panel"><div class="panel-head"><h3>♛ OS MAIS RESPEITADOS</h3><span class="panel-caption">${game.mode==='season'?`TEMPORADA 01 · DIA ${currentDay(game)}`:'MODO INFINITO'}</span></div>${rank.map((x,i)=>`<div class="rank-line ${x.isPlayer?'self':''}"><span class="rank-num">${String(i+1).padStart(2,'0')}</span><div class="rank-avatar" style="color:${x.accent}">${esc(x.name.charAt(0).toUpperCase())}</div><div class="rank-name">${esc(x.name)}${x.isPlayer?'<small>VOCÊ</small>':'<small>RIVAL SIMULADO</small>'}</div><div class="rank-score">${unit(x.respect)}</div></div>`).join('')}</div><div class="panel"><div class="panel-head"><h3>✦ SEU IMPÉRIO</h3><span class="panel-caption">COMPOSIÇÃO DO RESPEITO</span></div><div class="panel-pad"><div class="stat-list">${[['Atributos',unit(statsPower(game)*11)],['Dinheiro + patrimônio',unit((game.cash+game.bank+assetsValue(game)+Object.keys(GOODS).reduce((n,k)=>n+(game.inventory[k]||0)*GOODS[k].base,0))*.15)],['Roubos bem-sucedidos',unit(game.crimesWon*24)]].map(([k,v])=>`<div class="stat-line"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div><div class="notice gap-top"><div class="notice-icon">📈</div><div><strong>O respeito decide a temporada</strong><p>Dinheiro, negócios e habilidades contam para o ranking. Os rivais acumulam respeito conforme os dias avançam.</p></div></div><div class="eyebrow" style="margin-top:16px">ESTATÍSTICAS</div><p class="muted" style="font-size:12px;line-height:2;margin-top:5px">Roubos realizados: ${game.crimesWon+game.crimesFailed}<br>Golpes bem-sucedidos: ${game.crimesWon}<br>Empreendimentos: ${game.factories.reduce((n,f)=>n+f.count,0)}<br>Patrimônio fixo: ${money(assetsValue(game))}</p></div></div></div>`}
+function content(){return {dashboard,crimes,training,business,city,ranking}[tab]?.()||dashboard()}
+function render(){if(game)shell();else landing()}
+root.addEventListener('click',e=>{
+const target=e.target.closest('[data-tab],[data-mode],[data-action],[data-bank],[data-export],[data-import],[data-reset]');if(!target)return;
+if(target.dataset.tab){tab=target.dataset.tab;render();window.scrollTo({top:0,behavior:'instant'});return}
+if(target.dataset.mode){newMode=target.dataset.mode;const name=document.getElementById('name')?.value||'Corvo';render();document.getElementById('name').value=name;return}
+if(target.dataset.action){apply({type:target.dataset.action,id:target.dataset.id,hours:Number(target.dataset.hours)});return}
+if(target.dataset.bank){const amount=Number(document.getElementById('bankAmount')?.value);apply({type:target.dataset.bank,amount});return}
+if(target.hasAttribute('data-export')){const a=document.createElement('a');const blob=new Blob([JSON.stringify(game,null,2)],{type:'application/json'});a.href=URL.createObjectURL(blob);a.download=`cidade-sem-lei-dia-${currentDay(game)}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),5000);toast('Save exportado.');return}
+if(target.hasAttribute('data-import')){document.getElementById('importFile')?.click();return}
+if(target.hasAttribute('data-reset')){if(confirm('Iniciar nova partida? O progresso atual será substituído. Exporte o save antes se quiser guardá-lo.')){game=null;localStorage.removeItem(KEY);tab='dashboard';render()}return}
+});
+root.addEventListener('submit',e=>{if(e.target.id==='start-form'){e.preventDefault();game=newGame({name:document.getElementById('name').value,mode:newMode});save();render();toast('Bem-vindo à Cidade Sem Lei.');}});
+root.addEventListener('change',async e=>{if(e.target.id!=='importFile')return;const file=e.target.files?.[0];if(!file)return;try{const data=JSON.parse(await file.text());if(!validateSave(data))throw new Error('O save contém valores inválidos.');if(!confirm('Importar este save e substituir sua partida atual?'))return;game=offlineProgress(data);save();render();toast('Save importado.')}catch(err){toast('Falha na importação: '+err.message,true)}});
+window.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&game){game=offlineProgress(game);save();render()}});
+setInterval(()=>{if(game){game=offlineProgress(game);save();render()}},20000);
+render();
+
+</script></body></html>
